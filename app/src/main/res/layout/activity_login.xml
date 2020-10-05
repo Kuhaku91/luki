@@ -39,8 +39,8 @@
                             android:id="@+id/username"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableLeft="@drawable/ic_person"
-                            android:drawableStart="@drawable/ic_person"
+                            android:drawableLeft="@drawable/ic_person_black_24dp"
+                            android:drawableStart="@drawable/ic_person_black_24dp"
                             android:drawablePadding="18dp"
                             android:hint="Username"
                             android:inputType="text"
@@ -132,4 +132,5 @@
         </RelativeLayout>
 
     </LinearLayout>
+
 </ScrollView>

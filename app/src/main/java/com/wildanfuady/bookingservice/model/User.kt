@@ -9,7 +9,7 @@ class User : Serializable {
     val userId : Int? = 0
     @field:SerializedName("username")
     var username : String? = null
-    @field:SerializedName("full_name")
+    @field:SerializedName("fullname")
     var fullName : String? = null
     @field:SerializedName("password")
     val password : String? = null

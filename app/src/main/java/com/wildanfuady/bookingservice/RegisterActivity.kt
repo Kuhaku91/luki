@@ -13,15 +13,18 @@ class RegisterActivity : AppCompatActivity(), RegisterView {
 
     override fun onSuccessRegister(msg: String?) {
         alert {
-            title = "Pesan"
-            message = msg?: ""
+            title = "Sukses"
+            message = "Berhasil melakukan register"
         }.show()
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     override fun onErrorRegister(msg: String?) {
         alert {
-            title = "Gagal"
-            message = msg?: ""
+            title = "Maaf"
+            message = "Gagal melakukan register"
         }.show()
     }
 

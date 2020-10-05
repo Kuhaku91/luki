@@ -18,7 +18,7 @@ object NetworkConfig {
 
     fun getRetrofit(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl("http://10.0.2.2/booking_service/")
+            .baseUrl("http://10.0.2.2/booking-service-api/")
                 // localhost/booking_service
             .client(getInterceptor())
             .addConverterFactory(GsonConverterFactory.create())
@@ -27,5 +27,8 @@ object NetworkConfig {
 
     fun getServiceRegister(): RegisterService = getRetrofit().create(RegisterService::class.java)
     fun getServiceLogin(): LoginService = getRetrofit().create(LoginService::class.java)
+    fun getServiceProduct(): ProductService = getRetrofit().create(ProductService::class.java)
+    fun getServiceBooking(): BookingService = getRetrofit().create(BookingService::class.java)
+    fun getServiceProfile(): ProfileService = getRetrofit().create(ProfileService::class.java)
 
 }

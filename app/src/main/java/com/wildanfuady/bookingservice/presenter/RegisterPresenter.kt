@@ -1,5 +1,6 @@
 package com.wildanfuady.bookingservice.presenter
 
+import android.util.Log
 import com.wildanfuady.bookingservice.network.NetworkConfig
 import com.wildanfuady.bookingservice.response.ResultRegister
 import retrofit2.Call
@@ -21,6 +22,8 @@ class RegisterPresenter(val registerView: RegisterView) {
                     call: Call<ResultRegister>,
                     response: Response<ResultRegister>
                 ) {
+                    Log.e("debug", "response ${response}")
+
                     if (response.body()?.status == 200){
                         registerView.onSuccessRegister(response?.message())
                     } else {
