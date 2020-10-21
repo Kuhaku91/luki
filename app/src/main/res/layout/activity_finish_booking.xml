@@ -32,11 +32,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:gravity="center"
         android:textColor="#ffffff"
         android:layout_below="@+id/textCenter"
-        android:id="@+id/textNoAntrian"/>
+        android:id="@+id/textNoAntrianAndJam"/>
 
     <Button
         android:layout_width="wrap_content"
