@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.widget.Toast
 import com.wildanfuady.bookingservice.presenter.BookingAddPresenter
 import com.wildanfuady.bookingservice.presenter.BookingView
@@ -39,15 +40,16 @@ class BookingAddActivity : AppCompatActivity(), BookingView {
         presenter.bookingAdd(getTanggal, userId, plat_nomor, jenis_kendaraan, jenis_cuci)
     }
 
-    override fun onSuccessBooking(msg: String?, harga: String?) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    override fun onSuccessBooking(msg: String?, harga: String?, antrian: String?) {
+        Toast.makeText(this, "Selamat! Anda berhasil melakukan booking.", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, FinishBookingActivity::class.java)
         intent.putExtra("harga", harga)
+        intent.putExtra("antrian", antrian)
         startActivity(intent)
         finish()
     }
 
-    override fun onErrorBooking(msg: String?) {
-        // Toast.makeText(this, "Gagal melakukan booking", Toast.LENGTH_SHORT).show()
+    override fun onErrorBooking(msg: String?, message: String?) {
+         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

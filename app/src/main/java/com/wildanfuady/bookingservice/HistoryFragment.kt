@@ -55,7 +55,7 @@ class HistoryFragment : Fragment(), HistoryView {
 
     override fun onErrorGetHistory(msg: String?) {
 
-        Toast.makeText(activity!!, "Gagal mendapatkan history order Anda", Toast.LENGTH_SHORT).show()
+        Toast.makeText(activity!!, "Selamat datang! Anda sudah bisa melakukan order cuci mobil sekarang.", Toast.LENGTH_SHORT).show()
 
     }
 

@@ -18,7 +18,7 @@ object NetworkConfig {
 
     fun getRetrofit(): Retrofit{
         return Retrofit.Builder()
-            .baseUrl("http://10.0.2.2/booking-service-api/")
+            .baseUrl("https://api-booking.ilmukoding.com/")
                 // localhost/booking_service
             .client(getInterceptor())
             .addConverterFactory(GsonConverterFactory.create())

@@ -16,7 +16,7 @@ class BookingAddPresenter(val bookingView: BookingView) {
             .enqueue(object : Callback<ResultBooking> {
 
                 override fun onFailure(call: Call<ResultBooking>, t: Throwable) {
-                    bookingView.onErrorBooking(t.localizedMessage)
+                    bookingView.onErrorBooking(t.localizedMessage, "")
                 }
 
                 override fun onResponse(
@@ -25,10 +25,10 @@ class BookingAddPresenter(val bookingView: BookingView) {
                 ) {
                     if (response.body()?.status == 200){
                         Log.e("debug", "$response")
-                        bookingView.onSuccessBooking(response.message(), response.body()!!.harga)
+                        bookingView.onSuccessBooking(response.message(), response.body()!!.harga, response.body()!!.antrian)
                     } else {
                         Log.e("debug", "$response")
-                        bookingView.onErrorBooking(response.message())
+                        bookingView.onErrorBooking(response.message(), response.body()!!.message)
                     }
                 }
             })

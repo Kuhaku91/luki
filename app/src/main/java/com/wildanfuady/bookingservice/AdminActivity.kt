@@ -8,27 +8,29 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.wildanfuady.bookingservice.adapter.AdminHistoryAdapter
 import com.wildanfuady.bookingservice.adapter.HistoryAdapter
 import com.wildanfuady.bookingservice.model.Booking
 import com.wildanfuady.bookingservice.presenter.HistoryPresenter
 import com.wildanfuady.bookingservice.presenter.HistoryView
+import kotlinx.android.synthetic.main.admin_history_adapter.*
 import kotlinx.android.synthetic.main.history_adapter.*
 
 class AdminActivity : AppCompatActivity(), HistoryView {
 
-    var adapter = HistoryAdapter()
+    var adapter = AdminHistoryAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.history_adapter)
+        setContentView(R.layout.admin_history_adapter)
 
         supportActionBar?.setTitle("Administrator")
 
         val presenter = HistoryPresenter(this)
         presenter.getHistoryFromAdmin()
 
-        listViewHistory.layoutManager = LinearLayoutManager(this)
-        listViewHistory.adapter = adapter
+        listViewHistoryAdmin.layoutManager = LinearLayoutManager(this)
+        listViewHistoryAdmin.adapter = adapter
 
     }
 

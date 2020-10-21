@@ -17,12 +17,15 @@ class FinishBookingActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         var harga = ""
+        var antrian = ""
         if(intent != null)
         {
             harga = intent.getStringExtra("harga")
+            antrian = intent.getStringExtra("antrian")
         }
         var rupiah = Converter.formatRupiah(harga.toInt())
         textHarga.setText(rupiah)
+        textNoAntrian.setText("Nomor Antrian: " + antrian)
 
         btnBackToHome.setOnClickListener {
             backToHome()

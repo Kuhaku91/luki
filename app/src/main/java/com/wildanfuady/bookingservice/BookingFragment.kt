@@ -86,6 +86,7 @@ class BookingFragment : Fragment(), CekTanggalView{
         var inputTanggal = textTanggal.text.toString()
         intent.putExtra("jadwal", inputTanggal)
         startActivity(intent)
+        Toast.makeText(activity!!, "Tanggal tersedia. Silahkan booking sekarang!.", Toast.LENGTH_SHORT).show()
     }
 
     override fun onErrorCekTanggal(msg: String?) {
