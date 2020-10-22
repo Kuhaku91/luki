@@ -18,10 +18,12 @@ class FinishBookingActivity : AppCompatActivity() {
 
         var harga = ""
         var antrian = ""
+        var jenis_kendaraan = ""
         if(intent != null)
         {
             harga = intent.getStringExtra("harga")
             antrian = intent.getStringExtra("antrian")
+            jenis_kendaraan = intent.getStringExtra("jenis_kendaraan")
         }
         var rupiah = Converter.formatRupiah(harga.toInt())
         textHarga.setText(rupiah)
@@ -39,7 +41,10 @@ class FinishBookingActivity : AppCompatActivity() {
         } else {
             jam = ""
         }
-        textNoAntrianAndJam.setText("No. Antrian: " + antrian + " Jam " + jam)
+        textNoAntrian.setText(antrian)
+        textJam.setText(jam)
+        textHarga.setText(rupiah)
+        textJenisKendaraan.setText(jenis_kendaraan)
 
         btnBackToHome.setOnClickListener {
             backToHome()

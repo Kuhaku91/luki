@@ -40,11 +40,12 @@ class BookingAddActivity : AppCompatActivity(), BookingView {
         presenter.bookingAdd(getTanggal, userId, plat_nomor, jenis_kendaraan, jenis_cuci)
     }
 
-    override fun onSuccessBooking(msg: String?, harga: String?, antrian: String?) {
+    override fun onSuccessBooking(msg: String?, harga: String?, antrian: String?, jenis_kendaraan: String?) {
         Toast.makeText(this, "Selamat! Anda berhasil melakukan booking.", Toast.LENGTH_SHORT).show()
         val intent = Intent(this, FinishBookingActivity::class.java)
         intent.putExtra("harga", harga)
         intent.putExtra("antrian", antrian)
+        intent.putExtra("jenis_kendaraan", jenis_kendaraan)
         startActivity(intent)
         finish()
     }

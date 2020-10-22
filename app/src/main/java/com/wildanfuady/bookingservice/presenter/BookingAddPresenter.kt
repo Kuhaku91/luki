@@ -25,7 +25,7 @@ class BookingAddPresenter(val bookingView: BookingView) {
                 ) {
                     if (response.body()?.status == 200){
                         Log.e("debug", "$response")
-                        bookingView.onSuccessBooking(response.message(), response.body()!!.harga, response.body()!!.antrian)
+                        bookingView.onSuccessBooking(response.message(), response.body()!!.harga, response.body()!!.antrian, response.body()!!.jenis_kendaraan)
                     } else {
                         Log.e("debug", "$response")
                         bookingView.onErrorBooking(response.message(), response.body()!!.message)
